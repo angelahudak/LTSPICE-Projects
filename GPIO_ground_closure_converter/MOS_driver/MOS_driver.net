@@ -1,0 +1,30 @@
+* C:\Users\angel\Desktop\Bryx\SPICE\GPIO_ground_closure_converter\MOS_driver\MOS_driver.asc
+A1 0 0 0 0 0 0 0 0 BUF
+V1 N002 0 5
+V2 N001 0 12v
+M2 N001 N002 Vout N001 PMOS
+M1 Vout N002 0 0 NMOS
+V5 N006 0 5
+V6 N003 0 12
+R2 N007 N006 1k
+R_Load 0 Vout2 16.2k
+M3 N005 N007 0 0 NMOS
+M4 N003 N004 Vout2 N003 PMOS
+R1 N006 0 10k
+R3 N003 N004 100k
+R4 N004 N005 5k
+Rin N008 0 10k
+R7 Vout3 0 16.2k
+Vin N010 0 0
+Vcc N009 0 12
+Rf Vout3 N008 14k
+XU2 N010 N008 N009 0 Vout3 level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\angel\OneDrive\Documents\LTspiceXVII\lib\cmp\standard.mos
+;tran 0 500n 0 10p
+.inc opamp.sub
+.op 0 500n 0 10p
+.lib UniversalOpamps2.sub
+.backanno
+.end
