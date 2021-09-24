@@ -1,2 +1,2 @@
-# LTSPICE-Projects2
+# LTSPICE-Projects
 Some projects made in LTSPICE
